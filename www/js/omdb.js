@@ -9,6 +9,7 @@ angular.module('ionicMovies.omdb', [])
         .success(function (response) {
           $scope.name = response.Title;
           $scope.rating = response.imdbRating;
+          $scope.year = response.Year;
           $scope.plot = response.Plot;
         console.log($scope.name);
         console.log(id);
