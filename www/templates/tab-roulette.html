@@ -2,5 +2,19 @@
   <ion-content>
     <br>
     <h1>Netflix Roulette</h1>
+    <button class= "button button-assertive" ng-click="getMovie()">Get Next - flix</button>
+    <ul>
+      <li>Title:       {{title}} <li>
+      <li>Year:        {{year}}<li>
+      <li>Star Rating: {{rating}}<li>
+      <li>Category:    {{category}} <li>
+      <li>Summary:     {{summary}}</li>
+      <div class = "poster">
+        <li>
+          <img ng-src = "{{poster}}"/>
+        <li>
+      </div>
+    </ul>
+
   </ion-content>
 </ion-view>
