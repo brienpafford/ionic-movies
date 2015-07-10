@@ -1,5 +1,5 @@
-angular.module('ionicMovies.controllers', [])
+angular.module('ionicMovies.omdb', [])
 
-.controller('omdbCtrl', function($scope) {
+.controller('OmdbCtrl', function($scope) {
 
 })

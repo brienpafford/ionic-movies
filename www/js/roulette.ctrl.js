@@ -1,5 +1,5 @@
-angular.module('ionicMovies.controllers', [])
+angular.module('ionicMovies.roulette', [])
 
-.controller('rouletteCtrl', function($scope) {
+.controller('RouletteCtrl', function($scope) {
 
 })

@@ -1,4 +1,4 @@
-angular.module('ionicMovies.controllers', [])
+angular.module('ionicMovies.nytr', [])
 
-.controller('nytrCtrl', function($scope) {
+.controller('NytrCtrl', function($scope) {
   });

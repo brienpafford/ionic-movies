@@ -1,5 +1,5 @@
-angular.module('ionicMovies.controllers', [])
+angular.module('ionicMovies.home', [])
 
-.controller('homeCtrl', function($scope) {})
+.controller('HomeCtrl', function($scope) {})
 
 

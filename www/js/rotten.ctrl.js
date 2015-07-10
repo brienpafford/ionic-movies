@@ -1,4 +1,4 @@
-angular.module('ionicMovies.controllers', [])
+angular.module('ionicMovies.rotten', [])
 
-.controller('rottenCtrl', function($scope) {
+.controller('RottenCtrl', function($scope) {
   })

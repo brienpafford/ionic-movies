@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'ionicMovies.services' is found in services.js
 // 'ionicMovies.controllers' is found in controllers.js
-angular.module('ionicMovies', ['ionic', 'ionicMovies.controllers', 'ionicMovies.services'])
+angular.module('ionicMovies', ['ionic', 'ionicMovies.home', 'ionicMovies.nytr', 'ionicMovies.omdb', 'ionicMovies.rotten', 'ionicMovies.roulette', 'ionicMovies.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -43,7 +43,7 @@ angular.module('ionicMovies', ['ionic', 'ionicMovies.controllers', 'ionicMovies.
     views: {
       'tab-home': {
         templateUrl: 'templates/tab-home.html',
-        controller: 'homeCtrl'
+        controller: 'HomeCtrl'
       }
     }
   })
@@ -53,7 +53,27 @@ angular.module('ionicMovies', ['ionic', 'ionicMovies.controllers', 'ionicMovies.
     views: {
       'tab-nytr': {
         templateUrl: 'templates/tab-nytr.html',
-        controller: 'nytrCtrl'
+        controller: 'NytrCtrl'
+      }
+    }
+  })
+
+  .state('tab.omdb', {
+      url: '/omdb',
+      views: {
+        'tab-omdb': {
+          templateUrl: 'templates/tab-omdb.html',
+          controller: 'OmdbCtrl'
+        }
+      }
+    })
+
+  .state('tab.rotten', {
+    url: '/rotten',
+    views: {
+      'tab-rotten': {
+        templateUrl: 'templates/tab-rotten.html',
+        controller: 'RottenCtrl'
       }
     }
   })
@@ -63,39 +83,9 @@ angular.module('ionicMovies', ['ionic', 'ionicMovies.controllers', 'ionicMovies.
       views: {
         'tab-roulette': {
           templateUrl: 'templates/tab-roulette.html',
-          controller: 'rouletteCtrl'
+          controller: 'RouletteCtrl'
         }
       }
-    })
-
-  .state('tab.omdb', {
-      url: '/omdb',
-      views: {
-        'tab-omdb': {
-          templateUrl: 'templates/tab-omdb.html',
-          controller: 'omdbCtrl'
-        }
-      }
-    })
-
-    // .state('tab.chat-detail', {
-    //   url: '/chats/:chatId',
-    //   views: {
-    //     'tab-chats': {
-    //       templateUrl: 'templates/chat-detail.html',
-    //       controller: 'ChatDetailCtrl'
-    //     }
-    //   }
-    // })
-
-  .state('tab.rotten', {
-    url: '/rotten',
-    views: {
-      'tab-rotten': {
-        templateUrl: 'templates/tab-rotten.html',
-        controller: 'rottenCtrl'
-      }
-    }
   })
 
   // if none of the above states are matched, use this as the fallback
