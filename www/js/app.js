@@ -1,11 +1,11 @@
-// Ionic Starter App
+// Ionic ionicMovies App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'ionicMovies' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+// 'ionicMovies.services' is found in services.js
+// 'ionicMovies.controllers' is found in controllers.js
+angular.module('ionicMovies', ['ionic', 'ionicMovies.controllers', 'ionicMovies.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,44 +38,65 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  .state('tab.home', {
+    url: '/home',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-home': {
+        templateUrl: 'templates/tab-home.html',
+        controller: 'homeCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
+  .state('tab.nytr', {
+    url: '/nytr',
+    views: {
+      'tab-nytr': {
+        templateUrl: 'templates/tab-nytr.html',
+        controller: 'nytrCtrl'
       }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    }
+  })
+
+  .state('tab.roulette', {
+      url: '/roulette',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-roulette': {
+          templateUrl: 'templates/tab-roulette.html',
+          controller: 'rouletteCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.omdb', {
+      url: '/omdb',
+      views: {
+        'tab-omdb': {
+          templateUrl: 'templates/tab-omdb.html',
+          controller: 'omdbCtrl'
+        }
+      }
+    })
+
+    // .state('tab.chat-detail', {
+    //   url: '/chats/:chatId',
+    //   views: {
+    //     'tab-chats': {
+    //       templateUrl: 'templates/chat-detail.html',
+    //       controller: 'ChatDetailCtrl'
+    //     }
+    //   }
+    // })
+
+  .state('tab.rotten', {
+    url: '/rotten',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-rotten': {
+        templateUrl: 'templates/tab-rotten.html',
+        controller: 'rottenCtrl'
       }
     }
-  });
+  })
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
