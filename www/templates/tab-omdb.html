@@ -1,18 +1,24 @@
-<ion-view view-title="Find a highly rated movie on IMDB!">
+<ion-view view-title="Find a highly rated movie or TV show!">
   <ion-content>
     <br>
    <!--  <input ng-model="search" placeholder="Year ex. '1960'"></input>
     <button class="button" ng-click="add(search)">Submit</button> -->
-    <div>Name: {{name}}</div>
-    <div>Year: {{year}}</div>
-    <div>Actors: {{actors}}</div>
-    <div>Rating: {{rating}}</div>
-    <div>Awards: {{awards}}</div>
-    <div>Votes: {{votes}}</div>
-    <div>Plot: {{plot}}</div>
-    <div class="row row responsive-sm">
-      <img class= "col" src="{{poster}}"></img>
+    <div class="bar bar-header">
+      <h1 class="title">Click Search and Wait!</h1>
+      <button ng-click="getMovie()" class="button button-positive ion-film-marker"> Search</button>
     </div>
-    <button ng-click="getMovie()" class="button button-full button-positive">Search!  Click once and wait!</button>
+    <div class="row row responsive-sm">
+      <div class="col">
+        <div class="top">Title: {{name}}</div>
+        <div>Year: {{year}}</div>
+        <div>Actors: {{actors}}</div>
+        <div>Type: {{cat}}</div>
+        <div>IMDB Rating: {{rating}}</div>
+        <div>Votes: {{votes}}</div>
+        <div>Plot: {{plot}}</div>
+        <div>{{posterAlt}}</div>
+        <img src="{{poster}}"></img>
+      </div>
+    </div>
   </ion-content>
 </ion-view>

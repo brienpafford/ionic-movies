@@ -1,14 +1,4 @@
-.poster {
-  height: 250px;
-  width: 200px;
-  position: absolute;
-  left: 50%;
-  margin-left:-100px;
-  margin-top: 500px;
-  bottom: 0;
+.top {
+  padding-top: 20px;
 }
 
-.posterFrame {
-  margin-top: 300px;
-  position: relative;
-}
