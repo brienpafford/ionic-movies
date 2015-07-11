@@ -1,14 +1,18 @@
-<ion-view view-title="Open Movie Database">
+<ion-view view-title="Find a highly rated movie on IMDB!">
   <ion-content>
     <br>
-    <h1>Rando Movie Picker</h1>
    <!--  <input ng-model="search" placeholder="Year ex. '1960'"></input>
     <button class="button" ng-click="add(search)">Submit</button> -->
     <div>Name: {{name}}</div>
     <div>Year: {{year}}</div>
+    <div>Actors: {{actors}}</div>
     <div>Rating: {{rating}}</div>
+    <div>Awards: {{awards}}</div>
+    <div>Votes: {{votes}}</div>
     <div>Plot: {{plot}}</div>
-    <button ng-click="getMovie()" class="button button-full button-positive">
-    </button>
+    <div class="row row responsive-sm">
+      <img class= "col" src="{{poster}}"></img>
+    </div>
+    <button ng-click="getMovie()" class="button button-full button-positive">Search!  Click once and wait!</button>
   </ion-content>
 </ion-view>
