@@ -2,6 +2,8 @@ angular.module('ionicMovies.omdb', [])
 
 .controller('OmdbCtrl', function($scope, $http) {
   // $scope.search = ''
+    $scope.request = 0
+    $scope.requestCache = 0;
          //gets movie by random IMDB I.d. that is rated higher than 7.0
       $scope.getMovie = function() {
           $scope.posterAlt = "";
@@ -18,7 +20,7 @@ angular.module('ionicMovies.omdb', [])
            var id = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
           $http.get("http://omdbapi.com/?i=tt" + id)  //
            .success(function (response) {
-             if(response.Type === "movie" && response.imdbRating * 1 > 6 || response.Type === "series" && response.imdbRating * 1 > 6){
+             if(response.Type === "movie" && response.imdbRating * 1 > 5.5 || response.Type === "series" && response.imdbRating * 1 > 5.5){
                 $scope.name = response.Title;
                 $scope.cat = response.Type;
                 $scope.actors = response.Actors;
@@ -26,6 +28,8 @@ angular.module('ionicMovies.omdb', [])
                 $scope.year = response.Year;
                 $scope.plot = response.Plot;
                 $scope.votes = response.imdbVotes;
+                $scope.requestCache = $scope.request;
+                $scope.request = 0;
                 if(response.Poster === "N/A"){
                   $scope.posterAlt = "Sorry.  No poster was available."
                 }else{
@@ -35,6 +39,7 @@ angular.module('ionicMovies.omdb', [])
                 console.log(response);
                 console.log($scope.poster);
               }else{
+                $scope.request = $scope.request += 1;
                 $scope.getMovie();
               }
         });
