@@ -25,7 +25,7 @@ angular.module('ionicMovies.omdb', [])
           }
           $http.get("http://omdbapi.com/?i=tt" + id)  //
            .success(function (response) {
-             if(response.Type === "movie" && response.imdbRating * 1 > 5.5 && response.imdbVotes * 1 > 50 || response.Type === "series" && response.imdbRating * 1 > 5.5 && response.imdbVotes * 1 > 50){
+             if(response.Type === "movie" && response.imdbRating * 1 >= 5.5 && response.imdbVotes * 1 >= 50 || response.Type === "series" && response.imdbRating * 1 >= 5.5 && response.imdbVotes * 1 >= 50){
                 $scope.name = response.Title;
                 $scope.cat = response.Type;
                 $scope.actors = response.Actors;
