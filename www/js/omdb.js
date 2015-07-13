@@ -15,16 +15,17 @@ angular.module('ionicMovies.omdb', [])
           $scope.year = "";
           $scope.plot = "";
           $scope.votes = "";
-          //fix for numbers:  Treat them as strings.  Concat them.  Check str.length and when === 7 run the function.  Put your math function in a foor loop
+          $scope.requestCache = 0;
+          //gets a random 7 digit number as the IMDB ID#.
           var id = "";
           for(i=0; i<7; i++){
             var idDigit = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
             var idString = idDigit.toString();
-            var id = id + idString;
+            id += idString;
           }
           $http.get("http://omdbapi.com/?i=tt" + id)  //
            .success(function (response) {
-             if(response.Type === "movie" && response.imdbRating * 1 > 5.5 || response.Type === "series" && response.imdbRating * 1 > 5.5){
+             if(response.Type === "movie" && response.imdbRating * 1 > 5.5 && response.imdbVotes * 1 > 50 || response.Type === "series" && response.imdbRating * 1 > 5.5 && response.imdbVotes * 1 > 50){
                 $scope.name = response.Title;
                 $scope.cat = response.Type;
                 $scope.actors = response.Actors;
@@ -43,7 +44,7 @@ angular.module('ionicMovies.omdb', [])
                 console.log(response);
                 console.log($scope.poster);
               }else{
-                $scope.request = $scope.request += 1;
+                $scope.request = $scope.request + 1;
                 $scope.getMovie();
               }
         });
