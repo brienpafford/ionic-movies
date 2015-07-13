@@ -1,0 +1,146 @@
+<ion-view view-title="TMDb">
+  <ion-content>
+    <!-- <button ng-click="getMovie()">ACTION!</button> -->
+    <div class="list">
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Genre
+        </div>
+        <select ng-model="data.genre">
+          <option selected>Any</option>
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="18">Drama</option>
+          <option value="10751">Family</option>
+          <option value="14">Fantasy</option>
+          <option value="10769">Foreign</option>
+          <option value="36">History</option>
+          <option value="27">Horror</option>
+          <option value="10402">Music</option>
+          <option value="9648">Mystery</option>
+          <option value="10749">Romance</option>
+          <option value="878">Science Fiction</option>
+          <option value="10770">TV Movie</option>
+          <option value="53">Thriller</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Year
+        </div>
+        <select ng-model="data.year">
+          <option selected>2015</option>
+          <option>2014</option>
+          <option>2013</option>
+          <option>2012</option>
+          <option>2011</option>
+          <option>2010</option>
+          <option>2009</option>
+          <option>2008</option>
+          <option>2007</option>
+          <option>2006</option>
+          <option>2005</option>
+          <option>2004</option>
+          <option>2003</option>
+          <option>2002</option>
+          <option>2001</option>
+          <option>2000</option>
+          <option>1999</option>
+          <option>1998</option>
+          <option>1997</option>
+          <option>1996</option>
+          <option>1995</option>
+          <option>1994</option>
+          <option>1993</option>
+          <option>1992</option>
+          <option>1991</option>
+          <option>1990</option>
+          <option>1989</option>
+          <option>1988</option>
+          <option>1987</option>
+          <option>1986</option>
+          <option>1985</option>
+          <option>1984</option>
+          <option>1983</option>
+          <option>1982</option>
+          <option>1981</option>
+          <option>1980</option>
+          <option>1979</option>
+          <option>1978</option>
+          <option>1977</option>
+          <option>1976</option>
+          <option>1975</option>
+          <option>1974</option>
+          <option>1973</option>
+          <option>1972</option>
+          <option>1971</option>
+          <option>1970</option>
+          <option>1969</option>
+          <option>1968</option>
+          <option>1967</option>
+          <option>1966</option>
+          <option>1965</option>
+          <option>1964</option>
+          <option>1963</option>
+          <option>1962</option>
+          <option>1961</option>
+          <option>1960</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Minimum # of Votes
+        </div>
+        <select ng-model="data.minVotes">
+          <option>2500</option>
+          <option>1000</option>
+          <option selected>500</option>
+          <option>250</option>
+          <option>100</option>
+          <option>50</option>
+          <option>10</option>
+          <option>1</option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Minimum Rating
+        </div>
+        <select ng-model="data.minRating">
+          <option>10</option>
+          <option>9</option>
+          <option>8</option>
+          <option selected>7</option>
+          <option>6</option>
+          <option>5</option>
+          <option>4</option>
+          <option>3</option>
+          <option>2</option>
+          <option>1</option>
+        </select>
+      </label>
+
+      <button class="button button-full button-balanced" ng-click="data.getMovie()">
+        Find a Movie
+      </button>
+
+    </div>
+    <div class="movieInfo" ng-show="data.hasSearched">
+      <h1>{{data.movie.title}} <span>({{data.movie.release_date}})</span></h1>
+      <p>{{data.movie.description}}</p>
+      <p>{{data.movie.votes}} votes, Average rating: {{data.movie.rating}} / 10</p>
+      <p>Popularity: {{data.movie.popularity}}</p>
+      <img src={{data.movie.poster}}>
+    </div>
+  </ion-content>
+</ion-view>

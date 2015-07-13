@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'ionicMovies.services' is found in services.js
 // 'ionicMovies.controllers' is found in controllers.js
-angular.module('ionicMovies', ['ionic', 'ionicMovies.home', 'ionicMovies.nytr', 'ionicMovies.omdb', 'ionicMovies.rotten', 'ionicMovies.roulette', 'ionicMovies.services'])
+angular.module('ionicMovies', ['ionic', 'ionicMovies.home', 'ionicMovies.nytr', 'ionicMovies.omdb', 'ionicMovies.tmdb', 'ionicMovies.roulette', 'ionicMovies.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -68,12 +68,12 @@ angular.module('ionicMovies', ['ionic', 'ionicMovies.home', 'ionicMovies.nytr', 
       }
     })
 
-  .state('tab.rotten', {
-    url: '/rotten',
+  .state('tab.tmdb', {
+    url: '/tmdb',
     views: {
-      'tab-rotten': {
-        templateUrl: 'templates/tab-rotten.html',
-        controller: 'RottenCtrl'
+      'tab-tmdb': {
+        templateUrl: 'templates/tab-tmdb.html',
+        controller: 'TmdbCtrl'
       }
     }
   })
