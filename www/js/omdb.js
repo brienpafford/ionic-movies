@@ -15,9 +15,13 @@ angular.module('ionicMovies.omdb', [])
           $scope.year = "";
           $scope.plot = "";
           $scope.votes = "";
-           var maximum = 0000000;
-           var minimum = 4000000;
-           var id = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+          //fix for numbers:  Treat them as strings.  Concat them.  Check str.length and when === 7 run the function.  Put your math function in a foor loop
+          var id = "";
+          for(i=0; i<7; i++){
+            var idDigit = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
+            var idString = idDigit.toString();
+            var id = id + idString;
+          }
           $http.get("http://omdbapi.com/?i=tt" + id)  //
            .success(function (response) {
              if(response.Type === "movie" && response.imdbRating * 1 > 5.5 || response.Type === "series" && response.imdbRating * 1 > 5.5){
@@ -44,8 +48,8 @@ angular.module('ionicMovies.omdb', [])
               }
         });
      }
-
 });
+
 
 //trying to get this to search by year of release.  CAnt figure out if my input in the search field is getting into the api request
 //    $scope.getMovie = function() {
